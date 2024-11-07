@@ -6,7 +6,7 @@ export const SITE: Site = {
   profile: "https://github.com/jonathanhu237",
   desc: "A space for sharing insights on tech, development, and personal experiences in the world of coding and beyond.",
   title: "Jonathan Hu's Blog",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,
   postPerPage: 3,
