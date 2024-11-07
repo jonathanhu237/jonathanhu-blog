@@ -5,7 +5,7 @@ export const SITE: Site = {
   author: "Jonathan Hu",
   profile: "https://github.com/jonathanhu237",
   desc: "A space for sharing insights on tech, development, and personal experiences in the world of coding and beyond.",
-  title: "Jonathan Hu's Blog",
+  title: "Jonathan's Blog",
   ogImage: "og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,
@@ -25,7 +25,7 @@ export const LOCALE = {
 } as const;
 
 export const LOGO_IMAGE = {
-  enable: true,
+  enable: false,
   svg: false,
   width: 216,
   height: 40,
