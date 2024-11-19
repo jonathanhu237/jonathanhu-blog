@@ -17,3 +17,4 @@ In the previous post, we discussed that LSH addresses the $c$-NNS problem by sol
 
 ## $\ell_p$ norm
 
+Coming soon ...
