@@ -1,12 +1,12 @@
-title: Hexo
+title: Jonathan Hu's Blog
 subtitle: ""
-description: ""
+description: "A space for sharing insights on tech, development, and personal experiences in the world of coding and beyond."
 keywords: null
-author: John Doe
+author: Jonathan Hu
 language: en
 timezone: ""
-url: http://example.com
-permalink: ":year/:month/:day/:title/"
+url: https://jonathanhu.tech
+permalink: "posts/:title/"
 permalink_defaults: null
 pretty_urls:
     trailing_index: true
@@ -28,7 +28,7 @@ external_link:
     exclude: ""
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 syntax_highlighter: highlight.js
@@ -61,3 +61,14 @@ ignore: null
 theme: icarus
 deploy:
     type: ""
+feed:
+    enable: true
+    type: atom
+    path: atom.xml
+    limit: 5
+    hub:
+    content: false
+    order_by: -date
+browsersync:
+    port: 4001
+    ui: { port: 4002 }

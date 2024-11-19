@@ -1,0 +1,33 @@
+toc: true
+widgets:
+    # Table of contents widget configurations
+    - # Where should the widget be placed, left sidebar or right sidebar
+      position: right
+      type: toc
+      # Whether to show the index of each heading
+      index: true
+      # Whether to collapse sub-headings when they are out-of-view
+      collapsed: false
+      # Maximum level of headings to show (1-6)
+      depth: 3
+    # Categories widget configurations
+    - # Where should the widget be placed, left sidebar or right sidebar
+      position: right
+      type: categories
+    # Tags widget configurations
+    - # Where should the widget be placed, left sidebar or right sidebar
+      position: right
+      type: tags
+      # How to order tags. For example 'name' to order by name in ascending order, and '-length' to order by number of posts in each tags in descending order
+      order_by: name
+      # Amount of tags to show. Will show all if not set.
+      amount:
+      # Whether to show tags count, i.e. number of posts in the tag.
+      show_count: true
+plugins:
+    mathjax: true
+    # Enable page startup animations
+    animejs: true
+sidebar:
+    right:
+        sticky: true
