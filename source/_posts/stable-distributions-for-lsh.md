@@ -16,10 +16,10 @@ In the previous post, we discussed that LSH addresses the $c$-NNS problem by sol
 
 ## $\ell_p$ Norm
 
-The $\ell_p$ norm is a mathematical concept used to measure the length or distance of a vector in a space. It generalizes the idea of distance in different ways, depending on the value of $p$. The $\ell_p$ norm of a vector $o=(o_1,o_2,\cdots,o_d)$ in $\mathbb{R}^d$ is defined as:
+The $\ell_p$ norm is a mathematical concept used to measure the length or distance of a vector in a space. It generalizes the idea of distance in different ways, depending on the value of $p$. The $\ell_p$ norm of a vector $\boldsymbol{o}=(o_1,o_2,\cdots,o_d)$ in $\mathbb{R}^d$ is defined as:
 
 $$
-\Vert o\Vert_p=\left(\sum_{i=1}^d\left|o_i\right|^p\right)^{1/p}
+\Vert \boldsymbol{o}\Vert_p=\left(\sum_{i=1}^d\left|o_i\right|^p\right)^{1/p}
 $$
 
 where $p\ge 1$. 
@@ -29,27 +29,27 @@ where $p\ge 1$.
 1. $\ell_1$ Norm (Manhattan Distance)：
 The $\ell_1$ norm, also known as the Manhattan distance, measures the sum of the absolute values of the vector components. Its mathematical expression is:
 $$
-\Vert o\Vert_1=\sum_{i=1}^d\left|o_i\right|
+\Vert \boldsymbol{o}\Vert_1=\sum_{i=1}^d\left|o_i\right|
 $$
 
 2. $\ell_2$ Norm (Euclidean Distance):
 The $\ell_2$ norm, also known as the Euclidean distance, measures the straight-line distance between the origin and the point represented by the vector. Its mathematical expression is:
 $$
-\Vert o\Vert_2=\sqrt{\sum_{i=1}^do_i^2}
+\Vert \boldsymbol{o}\Vert_2=\sqrt{\sum_{i=1}^do_i^2}
 $$
 
 3. $\ell_\infty$ Norm (Chebyshev Distance):
 The $\ell_\infty$ norm, also known as the Chebyshev distance, measures the largest absolute value among the vector components. Its mathematical expression is:
 $$
-\Vert o\Vert_\infty=\max_{i=1,\cdots,d}\left| o_i\right|
+\Vert \boldsymbol{o}\Vert_\infty=\max_{i=1,\cdots,d}\left| o_i\right|
 $$
 
 ## LSH for $(R,c)$-NNS Under $\ell_p$ Norm
 
 To solve the  $(R,c)$-NNS problem using LSH, the key idea is to design a family of LSH functions $\mathcal{H}$, such that, for any $h\in\mathcal{H}$, the following conditions holds:
 
-- If $\Vert o_1-o_2\Vert_p\le r_1$, then $\Pr\left[h(o_1)=h(o_2)\right]\ge p_1$
-- If $\Vert o_1-o_2\Vert_p\gt r_2$, then $\Pr[h(o_1)=h(o_2)]\le p_2$
+- If $\Vert \boldsymbol{o_1}-\boldsymbol{o_2}\Vert_p\le r_1$, then $\Pr\left[h(\boldsymbol{o_1})=h(\boldsymbol{o_2})\right]\ge p_1$
+- If $\Vert \boldsymbol{o_1}-\boldsymbol{o_2}\Vert_p\gt r_2$, then $\Pr[h(\boldsymbol{o_1})=h(\boldsymbol{o_2})]\le p_2$
 
 In other words, we aim to construct hash functions where the probability of two points colliding (hashing to the same bucket) is directly related to their $\ell_p$-norm distance. Points that are close in $\ell_p$-norm have a higher collision probability, which points that are far apart have a lower collision probability.
 
@@ -90,14 +90,14 @@ $$
 
 ### $p$-stable Distributions and LSH families
 
-Given a vector $o=(o_1,o_2,\cdots,o_d)$ and $d$ independent random variables $X_1,X_2,\cdots,X_d$ that follow a $p$-stable distribution $\mathcal{D}$, the property of the $p$-stable distribution ensures that the linear combination of these random variables:
+Given a vector $\boldsymbol{o}=(o_1,o_2,\cdots,o_d)$ and $d$ independent random variables $X_1,X_2,\cdots,X_d$ that follow a $p$-stable distribution $\mathcal{D}$, the property of the $p$-stable distribution ensures that the linear combination of these random variables:
 $$
 S=o_1X_1+o_2X_2+\cdots+o_dX_d
 $$
 is distributed as:
 $$
-S\sim\left(\sum_{i=1}^d\left|o_i\right|^p\right)^{1/p}X=\Vert o\Vert_pX
+S\sim\left(\sum_{i=1}^d\left|o_i\right|^p\right)^{1/p}X=\Vert \boldsymbol{o}\Vert_pX
 $$
 where $X\sim\mathcal{D}$. 
 
-Given two vector $o_1=(o_{11},o_{12},\cdots,o_{1d})$ and vector $o_2=(o_{21},o_{22},\cdots,o_{2d})$, we can easily prove that the absolute value of the different between $$
+Given two vector $\boldsymbol{o_1}=(o_{11},o_{12},\cdots,o_{1d})$ and vector $\boldsymbol{o_2}=(o_{21},o_{22},\cdots,o_{2d})$, we can easily prove that the absolute value of the different between
