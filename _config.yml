@@ -72,3 +72,5 @@ feed:
 browsersync:
     port: 4001
     ui: { port: 4002 }
+sitemap:
+    path: sitemap.xml
