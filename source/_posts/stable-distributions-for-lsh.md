@@ -98,4 +98,6 @@ is distributed as:
 $$
 S\sim\left(\sum_{i=1}^d\left|o_i\right|^p\right)^{1/p}X=\Vert o\Vert_pX
 $$
-where $X\sim\mathcal{D}$.
+where $X\sim\mathcal{D}$. 
+
+Given two vector $o_1=(o_{11},o_{12},\cdots,o_{1d})$ and vector $o_2=(o_{21},o_{22},\cdots,o_{2d})$, we can easily prove that the absolute value of the different between $$
