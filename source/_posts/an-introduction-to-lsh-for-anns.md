@@ -6,8 +6,8 @@ categories:
 tags:
     - LSH
     - ANNS
-cover: /img/covers/cosmic_nebula.png
-thumbnail: /img/covers/cosmic_nebula.png
+cover: /img/covers/cosmic_nebula.avif
+thumbnail: /img/covers/cosmic_nebula.avif
 ---
 
 This article introduces Locality-Sensitive Hashing (LSH) as an effective technique for Approximate Nearest Neighbor Search (ANNS) in high-dimensional spaces, addressing the "curse of dimensionality." By using hash functions that map similar data points into the same buckets, LSH reduces the general $c$-NNS problem into manageable $(R, c)$-NNS subproblems. This approach enables fast approximate searches with acceptable accuracy, effectively tackling the challenges of high-dimensional data search.
