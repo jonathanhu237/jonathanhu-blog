@@ -87,3 +87,15 @@ The Gaussian (normal) distribution is 2-stable and is defined by the density fun
 $$
 g(x)=\frac{1}{\sqrt{2\pi}}\exp\left(-\frac{x^2}{2}\right)
 $$
+
+### $p$-stable Distributions and LSH families
+
+Given a vector $o=(o_1,o_2,\cdots,o_d)$ and $d$ independent random variables $X_1,X_2,\cdots,X_d$ that follow a $p$-stable distribution $\mathcal{D}$, the property of the $p$-stable distribution ensures that the linear combination of these random variables:
+$$
+S=o_1X_1+o_2X_2+\cdots+o_dX_d
+$$
+is distributed as:
+$$
+S\sim\left(\sum_{i=1}^d\left|o_i\right|^p\right)^{1/p}X=\Vert o\Vert_pX
+$$
+where $X\sim\mathcal{D}$.
