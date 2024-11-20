@@ -1,6 +1,6 @@
 ---
 title: Stable Distributions for LSH
-date: "2024-11-20 11:00:00+08:00"
+date: "2024-11-21 00:00:00+08:00"
 categories:
     - Algorithm
 tags:
@@ -98,4 +98,25 @@ S\sim\left(\sum_{i=1}^d\left|o_i\right|^p\right)^{1/p}X=\Vert \boldsymbol{o}\Ver
 $$
 where $X\sim\mathcal{D}$. 
 
-Given two vector $\boldsymbol{o_1}=(o_{11},o_{12},\cdots,o_{1d})$ and vector $\boldsymbol{o_2}=(o_{21},o_{22},\cdots,o_{2d})$, we can easily prove that the absolute value of the different between
+Leveraging this property, Datar et al. design an LSH family $\mathcal{H}$ for solving the $(R,c)$-NNS problem. The hash function $h\in\mathcal{H}$ is defined as:
+$$
+h(\boldsymbol{o})=\left\lfloor\frac{\boldsymbol{a}\cdot\boldsymbol{o}+b}{w}\right\rfloor
+$$
+Where:
+
+- $\boldsymbol{a}$ is a $d$ dimensional vector with entries chosen independently from a $p$-stable distribution, 
+- $w$ is a fixed constant, and
+- $b$ is a real number chosen uniformly from $[0,w]$. 
+
+We will prove that $\mathcal{H}$ is indeed an LSH family shortly.
+
+The hash function can be intuitively understood as a series of steps applied to a given point:
+
+1. The point $\boldsymbol{o}$ is projected onto a random one-dimensional line defined by $\boldsymbol{a}$.
+2. A random offset $b$ is added to the projection to introduce randomness.
+3. The random line is divided into segments of equal width $w$, The segment that the projection falls into is determined using division and the floor operation.
+4. The index of the segment where the projection falls into is assigned as the hash value of $\boldsymbol{o}$.
+
+The geometric interpretation of this process is as follows:
+
+![geometric interpretation of LSH](stable-distributions-for-lsh/geometric-interpretation-of-LSH.svg)
