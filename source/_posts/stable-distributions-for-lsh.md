@@ -1,6 +1,6 @@
 ---
 title: Stable Distributions for LSH
-date: "2024-11-18 16:00"
+date: "2024-11-20 11:00"
 categories:
     - Algorithm
 tags:
@@ -43,4 +43,13 @@ The $\ell_\infty$ norm, also known as the "Chebyshev Distance", measures the lar
 $$
 \Vert o\Vert_\infty=\max_{i=1,\cdots,d}\left| o_i\right|
 $$
+
+## LSH for $(R,c)$-NNS Under $\ell_p$ Norm
+
+To solve the  $(R,c)$-NNS problem using LSH, the key idea is to  desing a family of LSH functions $\mathcal{H}$, such that, for any $h\in\mathcal{H}$, the following conditions holds:
+
+- If $\Vert o_1-o_2\Vert_p\le r_1$, then $\Pr\left[h(o_1)=h(o_2)\right]\ge p_1$
+- If $\Vert o_1-o_2\Vert_p\gt r_2$, then $\Pr[h(o_1)=h(o_2)]\le p_2$
+
+In other words, we need to find out a method to construct the hash function whose collision probability is associated with the $\ell_p$ norm between two points.
 
