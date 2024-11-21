@@ -120,3 +120,18 @@ The hash function can be intuitively understood as a series of steps applied to 
 The geometric interpretation of this process is as follows:
 
 ![geometric interpretation of LSH](stable-distributions-for-lsh/geometric-interpretation-of-LSH.svg)
+
+Given two points $\boldsymbol{o_1}$ and $\boldsymbol{o_2}$, the projection of $\boldsymbol{o_1}$ and $\boldsymbol{o_2}$ fall into the same hash bucket if and only if the following two events occur simultaneously:
+
+1. event $E_1$: the distance between the projection of $\boldsymbol{o_1}$ and $\boldsymbol{o_2}$ smaller than the segment width $w$. Mathematically:
+
+$$
+\left|\left(\boldsymbol{a}\cdot\boldsymbol{o_1}+b\right)-\left(\boldsymbol{a}\cdot\boldsymbol{o_2}+b\right)\right|=\left|\boldsymbol{a}\cdot\boldsymbol{o_1}-\boldsymbol{a}\cdot\boldsymbol{o_2}\right|\lt w
+$$
+
+2. event $E_2$: there is not segment boundary between the projection of $\boldsymbol{o_1}$ and $\boldsymbol{o_2}$. This ensures both projections fall into the same segment.
+
+Thus, the probability of a collision is the probability that both events $E_1$ and $E_2$ hold simultaneously.
+
+
+
