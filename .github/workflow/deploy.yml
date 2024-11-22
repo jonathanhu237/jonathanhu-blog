@@ -1,0 +1,38 @@
+name: Deploy Hexo to Cloudflare Pages
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    build-and-deploy:
+        runs-on: ubuntu-latest
+        step:
+            - name: Checkout repository
+              uses: action/checkout@v4
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "lts/*"
+
+            - name: Install pnpm
+              run: npm install -g pnpm
+
+            - name: Install hexo-cli
+              run: npm install -g hexo-cli
+
+            - name: Install pandoc
+              run: sudo apt install pandoc
+
+            - name: Install dependencies
+              run: pnpm install
+
+            - name: Build
+              run: hexo generate
+
+            - name: Deploy to CloudFLare Pages
+              uses: cloudflare/wrangler-action@v3
+              with:
+                  apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
