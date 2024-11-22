@@ -1,6 +1,6 @@
 ---
 title: Stable Distributions for LSH
-date: "2024-11-23 12:26:00+08:00"
+date: "2024-11-23 01:39:00+08:00"
 categories:
     - Computer Science
 tags:
@@ -169,3 +169,24 @@ For convenience, we omit the subscript $|X|$. Since the collision probability de
 $$
 p(s)=\int_0^w\frac{1}{s}f\left(\frac{u}{s}\right)\left(1-\frac{u}{w}\right)\mathrm{d}u
 $$
+Notice that the collision probability $p(s)$ decreases monotonically as the distance $s$ between two points increases. For given $R$ and $c$, the hash function $h$ is $(R,cR,p(R),p(cR))$-sensitive.
+
+### LSH Families for Special Cases of the $\ell_p$ norm
+
+As previously mentioned, $p$-stable distributions exist for any $p\in(0,2]$. The primary difference in designing LSH families for different values of $p$ lies in the choice of $p$-stable distribution from which the entries of $\boldsymbol{a}$ are drawn. Here, we introduce two special distributions for the cases $p=1$ and $p=2$. Using these distributions, we can construct LSH families for $(R,c)$-ANNS under $\ell_1$ and $\ell_2$ norms.
+
+#### LSH Family for $\ell_1$ Norm
+
+The standard Cauchy distribution is a 1-stable distribution. Its PDF is given by:
+$$
+f(x)=\frac{1}{\pi(1+x^2)}
+$$
+By utilizing the standard Cauchy distribution to design the LSH family for $(R,c)$-ANNS, the resulting LSH family is $\left(R,cR,\frac{1}{\pi(1+R^2)},\frac{1}{\pi(1+c^2R^2)}\right)$-sensitive.
+
+#### LSH Family for $\ell_2$ Norm
+
+The standard Gaussian distribution is a 2-stable distribution. Its PDF is given by:
+$$
+f(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}
+$$
+By leveraging the standard Gaussian distribution to design the LSH family for $(R,c)$-ANNS, the resulting LSH family is $\left(R,cR,\frac{1}{\sqrt{2\pi}}e^{-\frac{R^2}{2}},\frac{1}{\sqrt{2\pi}}e^{-\frac{c^2R^2}{2}}\right)$-sensitive.
