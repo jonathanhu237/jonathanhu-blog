@@ -1,9 +1,11 @@
 ---
 title: Dynamic Collision Counting For LSH
 categories:
-  - null
+  - Computer Science
 tags:
-  - null
+  - LSH
+  - ANNS
+  - Collision Counting
 ---
 
 Coming soon...
