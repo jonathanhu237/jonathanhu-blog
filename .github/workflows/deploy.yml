@@ -37,4 +37,4 @@ jobs:
               with:
                   apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
                   packageManager: pnpm
-                  command: pages deploy public
+                  command: pages deploy public --project-name=jonathanhu-blog
