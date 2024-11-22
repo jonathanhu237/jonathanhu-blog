@@ -74,3 +74,10 @@ browsersync:
     ui: { port: 4002 }
 sitemap:
     path: sitemap.xml
+pandoc:
+    args:
+        - "-f"
+        - "markdown"
+        - "-t"
+        - "html"
+        - "--mathjax"
