@@ -131,7 +131,36 @@ $$
 
 2. event $E_2$: there is not segment boundary between the projection of $\boldsymbol{o_1}$ and $\boldsymbol{o_2}$. This ensures both projections fall into the same segment.
 
-Thus, the probability of a collision is the probability that both events $E_1$ and $E_2$ hold simultaneously.
+Thus, the probability of a collision is the probability that both events $E_1$ and $E_2$ hold simultaneously. 
 
+For convenience, let $U=\left|\boldsymbol{a}\cdot(\boldsymbol{o_1}-\boldsymbol{o_2})\right|$. The probability $P(E_1)$ is:
 
+$$
+P(E_1)=\Pr\left[U<w\right]=\int_{0}^wf_U(u)\mathrm{d}u
+$$
 
+where $f_U(u)$ is the probability density function (PDF) of the random variable $U$. Given a realization $u$ of $U$, the conditional probability $P(E_2\mid u)$ is:
+
+$$
+P(E_2\mid u)=1-\frac{u}{w}
+$$
+Therefore, the overall collision probability can be calculated as:
+$$
+\Pr[h(\boldsymbol{o_1})=h(\boldsymbol{o_2})]=\int_0^wf_U(u)\left(1-\frac{u}{w}\right)\mathrm{d}u
+$$
+Let $s=\Vert\boldsymbol{o_1}-\boldsymbol{o_2}\Vert_p$. By the properties of $p$-stable distributions, we have $U=s|X|$ , where $|X|$ is the absolute value of a random variable following a $p$-stable distribution. Let $F_U(\cdot)$  and $F_{|X|}(\cdot)$ denote the cumulative distribution function (CDF) of $U$ and $|X|$, respectively. Then:
+$$
+F_U(u)=\Pr[U\le u]=\Pr[s|X|\le u]=\Pr\left[|X|\le\frac{u}{s}\right]=F_{|X|}\left(\frac{u}{s}\right)
+$$
+Differentiating $F_U(u)$, we obtain the PDF of $U$:
+$$
+f_U(u)=F'_U(u)=\frac{\mathrm{d}}{\mathrm{d}u}F_{|X|}\left(\frac{u}{s}\right)=\frac{1}{s}f_{|X|}\left(\frac{u}{s}\right)
+$$
+where $f_{|X|}(\cdot)$ is the PDF of $|X|$. Substituting this back, the collision probability becomes:
+$$
+\Pr[h(\boldsymbol{o_1})=h(\boldsymbol{o_2})]=\int_0^w\frac{1}{s}f_{|X|}\left(\frac{u}{s}\right)\left(1-\frac{u}{w}\right)\mathrm{d}u
+$$
+For convenience, we omit the subscript $|X|$. Since the collision probability depends on $s$, we denote it as $p(s)$, where:
+$$
+p(s)=\int_0^w\frac{1}{s}f\left(\frac{u}{s}\right)\left(1-\frac{u}{w}\right)\mathrm{d}u
+$$
