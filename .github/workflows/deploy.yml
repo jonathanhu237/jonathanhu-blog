@@ -36,5 +36,5 @@ jobs:
               uses: cloudflare/wrangler-action@v3
               with:
                   apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-                  workingDirectory: "public"
                   packageManager: pnpm
+                  command: wrangler deploy ./public
