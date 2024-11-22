@@ -2,7 +2,7 @@
 title: Stable Distributions for LSH
 date: "2024-11-23 12:26:00+08:00"
 categories:
-    - Algorithm
+    - Computer Science
 tags:
     - LSH
     - ANNS
