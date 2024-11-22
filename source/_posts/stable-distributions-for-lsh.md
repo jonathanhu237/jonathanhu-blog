@@ -153,14 +153,19 @@ $$
 F_U(u)=\Pr[U\le u]=\Pr[s|X|\le u]=\Pr\left[|X|\le\frac{u}{s}\right]=F_{|X|}\left(\frac{u}{s}\right)
 $$
 Differentiating $F_U(u)$, we obtain the PDF of $U$:
+
 $$
-f_U(u)=F'_U(u)=\frac{\mathrm{d}}{\mathrm{d}u}F_{|X|}\left(\frac{u}{s}\right)=\frac{1}{s}f_{|X|}\left(\frac{u}{s}\right)
+f_{U}(u)=F^{\prime}_{U}(u)=\frac{\mathrm{d}}{\mathrm{d}u}F_{\lvert X\rvert}\left(\frac{u}{s}\right)=\frac{1}{s}f_{\lvert X\rvert}\left(\frac{u}{s}\right)
 $$
+
 where $f_{|X|}(\cdot)$ is the PDF of $|X|$. Substituting this back, the collision probability becomes:
+
 $$
 \Pr[h(\boldsymbol{o_1})=h(\boldsymbol{o_2})]=\int_0^w\frac{1}{s}f_{|X|}\left(\frac{u}{s}\right)\left(1-\frac{u}{w}\right)\mathrm{d}u
 $$
+
 For convenience, we omit the subscript $|X|$. Since the collision probability depends on $s$, we denote it as $p(s)$, where:
+
 $$
 p(s)=\int_0^w\frac{1}{s}f\left(\frac{u}{s}\right)\left(1-\frac{u}{w}\right)\mathrm{d}u
 $$
