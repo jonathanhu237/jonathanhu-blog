@@ -5,6 +5,4 @@ categories:
     -
 tags:
     -
-cover:
-thumbnail:
 ---
