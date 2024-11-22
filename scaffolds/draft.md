@@ -1,7 +1,5 @@
 ---
 title: {{ title }}
 categories:
-    -
 tags:
-    -
 ---
