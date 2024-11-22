@@ -24,7 +24,7 @@ jobs:
               run: npm install -g hexo-cli
 
             - name: Install pandoc
-              run: sudo apt install pandoc
+              run: sudo apt-get install pandoc
 
             - name: Install dependencies
               run: pnpm install
