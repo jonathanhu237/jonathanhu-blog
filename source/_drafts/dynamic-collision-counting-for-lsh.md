@@ -5,6 +5,7 @@ categories:
 tags:
   - LSH
   - ANNS
+  - Stable Distribution
 ---
 
 Coming soon...
