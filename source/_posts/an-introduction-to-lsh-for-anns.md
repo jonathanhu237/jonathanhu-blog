@@ -2,7 +2,7 @@
 title: An Introduction to LSH for ANNS
 date: "2024-11-18 12:00:00+08:00"
 categories:
-    - Algorithm
+    - Computer Science
 tags:
     - LSH
     - ANNS
