@@ -5,7 +5,6 @@ categories:
 tags:
   - LSH
   - ANNS
-  - Collision Counting
 ---
 
 Coming soon...
