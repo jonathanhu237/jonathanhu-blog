@@ -1,5 +1,5 @@
 ---
-title: Embedding Finite Metric Spaces into Chebyshev Space
+title: Embedding Metric Spaces into Chebyshev Space
 categories:
     - Math
 tags:
