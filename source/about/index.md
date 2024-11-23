@@ -1,6 +1,8 @@
-# Hi👋
+---
+title: About Me
+---
 
-I'm Jonathan Hu, a master's student at the School of Computer Science and Engineering at Sun Yat-sen University, where I focus on research in Locality-Sensitive Hashing (LSH). This powerful technique is transforming the way we handle large datasets in machine learning and data mining, and I'm excited to be contributing to its applications.
+Hi👋, I'm Jonathan Hu, a master's student at the School of Computer Science and Engineering at Sun Yat-sen University, where I focus on research in Locality-Sensitive Hashing (LSH). This powerful technique is transforming the way we handle large datasets in machine learning and data mining, and I'm excited to be contributing to its applications.
 
 Outside of research, I'm expanding my skill set in web development. I'm currently honing my backend development skills with Go, which I find both efficient and enjoyable for building scalable services. On the frontend, I'm working with React to create dynamic, user-friendly interfaces, while also managing databases with PostgreSQL. I believe in building full-stack solutions that are both functional and intuitive.
 
