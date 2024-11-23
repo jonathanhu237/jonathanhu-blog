@@ -1,5 +1,5 @@
 ---
-title: Dynamic Collision Counting For LSH
+title: Dynamic Collision Counting for LSH
 categories:
   - Computer Science
 tags:
