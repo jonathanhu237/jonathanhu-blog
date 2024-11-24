@@ -1,5 +1,5 @@
 ---
-title: Isometric Embeddings from Metric Spaces to Chebyshev Space
+title: Isometric Embeddings of Metric Spaces into Chebyshev Space
 categories:
   - Math
 tags:
