@@ -38,14 +38,18 @@ Let $(\mathcal{M},d_{\mathcal{M}})$ and $(\mathcal{M'},d_{\mathcal{M'}})$ be two
 $$
 d_{\mathcal{M}}(\boldsymbol{x},\boldsymbol{y})=d_{\mathcal{M'}}(\boldsymbol{f}(\boldsymbol{x}),\boldsymbol{f}(\boldsymbol{y}))
 $$
-The contraction of $\boldsymbol{f}$ is defined as the maximum factor by which the distances shrink under the mapping, defined as:
+However, not all embeddings are isometric. Some embeddings distort distances, and these referred to as distortion embedding. To measure the distortion of such embedding, we use following two indicators:
+
+- Contraction: The maximum factor by which the distances shrink under the mapping, defined as:
 $$
 \max_{x,y\in\mathcal{M}}\frac{d_{\mathcal{M}}(\boldsymbol{x},\boldsymbol{y})}{d_{\mathcal{M'}}(\boldsymbol{f}(\boldsymbol{x}),\boldsymbol{f}(\boldsymbol{y}))}
 $$
-Similarly, the expansion of $\boldsymbol{f}$ is the maximum factor by which distances are stretched, defined as:
+- Expansion: The maximum factor by which distances are stretched under the mapping, defined as:
 $$
 \max_{x,y\in\mathcal{M}}\frac{d_{\mathcal{M'}}(\boldsymbol{f}(\boldsymbol{x}),\boldsymbol{f}(\boldsymbol{y}))}{d_{\mathcal{M}}(\boldsymbol{x},\boldsymbol{y})}
 $$
+
+While distortion embeddings are interesting in their own right, we will discuss them in another post. For now, let's focus on isometric embeddings.
 
 ## Isometric Embedding from $\mathcal{L}_{1}^{n,d}$ to $\mathcal{L}_{\infty}^{n,2^d}$
 
