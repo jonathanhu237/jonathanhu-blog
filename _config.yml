@@ -4,7 +4,7 @@ description: "A space for sharing insights on tech, development, and personal ex
 keywords: null
 author: Jonathan Hu
 language: en
-timezone: ""
+timezone: "Asia/Shanghai"
 url: https://jonathanhu.tech
 permalink: "posts/:title/"
 permalink_defaults: null
