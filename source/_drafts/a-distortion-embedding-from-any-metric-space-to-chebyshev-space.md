@@ -48,7 +48,36 @@ $$
 
 To prove that the contraction of the embedding is at most $D$, we first need to establish an important lemma.
 
+### Important Lemma
+
 Let $\boldsymbol{x}$ and $\boldsymbol{y}$ be two distinct points of $\mathcal{M}$. Then there exists an index $j\in\{1,2,\cdots,q\}$ such that:
+
 $$
 \Pr\left[\left|d_{\mathcal{M}}(\boldsymbol{x},\mathcal{M}_{ij})-d_{\mathcal{M}}(\boldsymbol{y},\mathcal{M}_{ij})\right|\ge\frac{d_{\mathcal{M}}(\boldsymbol{x},\boldsymbol{y})}{D}\right]\ge\frac{p}{12}
 $$
+
+Assuming the lemma holds, we proceed to prove the theorem.
+
+### Proof of the Theorem Using the Lemma
+
+Fix $j$, as guaranteed by the lemma. For a given pair of points $\boldsymbol{x}$ and $\boldsymbol{y}$, the probability that the distance is larger than $D$ for all $m$ trials is at most:
+
+$$
+\left(1-\frac{p}{12}\right)^{m}=\left(\left(1-\frac{p}{12}\right)^{\frac{12}{p}}\right)^{\frac{pm}{12}}\lt e^{-\frac{pm}{12}}
+$$
+
+Substitute $p=n^{-1/q}$, $m=\left\lceil 24n^{1/q}\log{n}\right\rceil$:
+
+$$
+\left(1-\frac{p}{12}\right)^{m}\lt e^{-\frac{pm}{12}}\le e^{-\frac{n^{-1/q}\cdot 24n^{1/q}\log{n}}{12}}=e^{-2\log{n}}=\frac{1}{n^2}
+$$
+
+Since there are $\binom{n}{2} \le n^2$ pairs of points in $\mathcal{M}$, by the Boole's inequality, the probability that the contraction of the distance exceeds $D$ in all trials for all points is at most:
+
+$$
+n^2\cdot \frac{1}{n^2}=1
+$$
+
+This implies that the embedding has a nonzero probability of succeeding.
+
+### Proof of the Lemma
