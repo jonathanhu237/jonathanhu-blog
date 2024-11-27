@@ -249,7 +249,7 @@ $$
 
 ## Extensions
 
-### Corollary
+### Corollary 1
 
 Starting with the embedding:
 
