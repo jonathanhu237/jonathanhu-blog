@@ -78,6 +78,48 @@ $$
 n^2\cdot \frac{1}{n^2}=1
 $$
 
-This implies that the embedding has a nonzero probability of succeeding.
+This implies that the following inequality holds for all pairs of point in $\mathcal{M}$ with nonzero probability:
+
+$$
+\frac{d_{\mathcal{M}}(\boldsymbol{x},\boldsymbol{y})}{D}\le\max_{i=1}^{m}\left|d_{\mathcal{M}}(\boldsymbol{x},\mathcal{M}_{ij})-d_{\mathcal{M}}(\boldsymbol{y},\mathcal{M}_{ij})\right|\le\Vert \boldsymbol{f(x)}-\boldsymbol{f(y)}\Vert_{\infty}
+$$
+
+To complete the proof, we need to show the reverse inequality:
+
+$$
+\Vert \boldsymbol{f(x)}-\boldsymbol{f(y)}\Vert_{\infty}\le d_\mathcal{M}(\boldsymbol{x},\boldsymbol{y})
+$$
+
+Given $\boldsymbol{x}$, $\boldsymbol{y}$ and subset $\mathcal{M}_{ij}$, let $\boldsymbol{x'}$ and $\boldsymbol{y'}$ be the closest points to $\boldsymbol{x}$ and $\boldsymbol{y}$ in $\mathcal{M}_{ij}$, respectively. Then:
+
+$$
+\left|d_{\mathcal{M}}(\boldsymbol{x},\mathcal{M}_{ij})-d_{\mathcal{M}}(\boldsymbol{y},\mathcal{M}_{ij})\right|=\left|d_{\mathcal{M}}(\boldsymbol{x},\boldsymbol{x'})-d_{\mathcal{M}}(\boldsymbol{y},\boldsymbol{y'})\right|
+$$
+
+Assume that $d_{\mathcal{M}}(\boldsymbol{x},\boldsymbol{x'})\gt d_{\mathcal{M}}(\boldsymbol{y},\boldsymbol{y'})$, then:
+
+$$
+\left|d_{\mathcal{M}}(\boldsymbol{x},\boldsymbol{x'})-d_{\mathcal{M}}(\boldsymbol{y},\boldsymbol{y'})\right|=d_{\mathcal{M}}(\boldsymbol{x},\boldsymbol{x'})-d_{\mathcal{M}}(\boldsymbol{y},\boldsymbol{y'})\le d_{\mathcal{M}}(\boldsymbol{x},\boldsymbol{y'})-d_{\mathcal{M}}(\boldsymbol{y},\boldsymbol{y'})\le d_{\mathcal{M}}(\boldsymbol{x},\boldsymbol{y})
+$$
+
+Similarly, assume that $d_{\mathcal{M}}(\boldsymbol{y},\boldsymbol{y'})\gt d_{\mathcal{M}}(\boldsymbol{x},\boldsymbol{x'})$, then:
+
+$$
+\left|d_{\mathcal{M}}(\boldsymbol{x},\boldsymbol{x'})-d_{\mathcal{M}}(\boldsymbol{y},\boldsymbol{y'})\right|=d_{\mathcal{M}}(\boldsymbol{y},\boldsymbol{y'})-d_{\mathcal{M}}(\boldsymbol{x},\boldsymbol{x'})\le d_{\mathcal{M}}(\boldsymbol{y},\boldsymbol{x'})-d_{\mathcal{M}}(\boldsymbol{x},\boldsymbol{x'})\le d_{\mathcal{M}}(\boldsymbol{x},\boldsymbol{y})
+$$
+
+In both cases, we have:
+
+$$
+\left|d_{\mathcal{M}}(\boldsymbol{x},\mathcal{M}_{ij})-d_{\mathcal{M}}(\boldsymbol{y},\mathcal{M}_{ij})\right|\le d_{\mathcal{M}}(\boldsymbol{x},\boldsymbol{y})
+$$
+
+Thus:
+
+$$
+\Vert \boldsymbol{f(x)}-\boldsymbol{f(y)}\Vert_{\infty}\le d_\mathcal{M}(\boldsymbol{x},\boldsymbol{y})
+$$
+
+which completes the proof.
 
 ### Proof of the Lemma
