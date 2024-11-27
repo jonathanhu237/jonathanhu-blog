@@ -248,3 +248,35 @@ $$
 $$
 
 ## Extensions
+
+### Corollary
+
+Starting with the embedding:
+
+$$
+(\mathcal{M},d_{\mathcal{M}})\overset{D}{\hookrightarrow}\mathcal{L}_{\infty}^{n,O\left(Dn^{\frac{2}{D}}\log{n}\right)}
+$$
+
+Substituting $D=\Theta(\log{n})$:
+
+$$
+n^{\frac{2}{D}}=n^{\frac{2}{\Theta(\log{n})}}
+$$
+
+Simplify the logarithm:
+
+$$
+\log{n^{\frac{2}{\Theta(\log{n})}}}=\frac{2}{\Theta(\log{n})}\log{n}=\Theta(1)
+$$
+
+Exponentiate back to simplify:
+
+$$
+n^{\frac{2}{D}}=\Theta(1)
+$$
+
+Thus, the embedding becomes:
+
+$$
+(\mathcal{M},d_{\mathcal{M}})\overset{\Theta(\log{n})}{\hookrightarrow}\mathcal{L}_{\infty}^{n,O\left(\log^2{n}\right)}
+$$
