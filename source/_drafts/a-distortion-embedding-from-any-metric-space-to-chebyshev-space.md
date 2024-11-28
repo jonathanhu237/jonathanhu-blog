@@ -247,9 +247,7 @@ $$
 \Pr\left[\mathcal{M}_{ij}\cap B_t\ne\varnothing\wedge\mathcal{M}_{ij}\cap B_{t+1}=\varnothing\right]\ge\frac{p}{12}
 $$
 
-## Extensions
-
-### Corollary 1
+## Corollary
 
 Starting with the embedding:
 
