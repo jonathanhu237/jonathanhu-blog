@@ -1,11 +1,13 @@
 ---
 title: A Distortion Embedding From Any Metric Space to Chebyshev Space
 categories:
-    - Math
+  - Math
 tags:
-    - Embedding
-    - Norm
+  - Embedding
+  - Norm
+date: 2024-11-28 14:36:52
 ---
+
 
 In the previous post, we introduced the concepts of metric space and embedding, and we discussed two isometric embeddings into the Chebyshev $(\ell_\infty)$ space. However, in many practical scenarios, distortion embeddings are more effective, as they trade precision for computational efficiency.
 
