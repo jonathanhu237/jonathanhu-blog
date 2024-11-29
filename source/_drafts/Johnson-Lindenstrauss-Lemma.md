@@ -15,10 +15,10 @@ The proof is based on the work of Dasgupta et al.'s paper *An elementary proof o
 
 ## JL Lemma
 
-For any set $\mathcal{P}$ of $n$ points in $\mathbb{R}^d$, there exists a map $f:\mathbb{R}^{d}\to\mathbb{R}^k$, such that for all $\boldsymbol{p_i},\boldsymbol{p_j}\in\mathcal{P}$:
+For any set $\mathcal{O}$ of $n$ points in $\mathbb{R}^d$, there exists a map $f:\mathbb{R}^{d}\to\mathbb{R}^k$, such that for all $\boldsymbol{o_i},\boldsymbol{o_j}\in\mathcal{P}$:
 
 $$
-(1-\epsilon)\Vert\boldsymbol{p_i}-\boldsymbol{p_j}\Vert_2^2\le\Vert\boldsymbol{f(p_i)-f(p_j)}\Vert_2^2\le(1+\epsilon)\Vert\boldsymbol{p_i}-\boldsymbol{p_j}\Vert_2^2
+(1-\epsilon)\Vert\boldsymbol{o_i}-\boldsymbol{o_j}\Vert_2^2\le\Vert\boldsymbol{f(o_i)-f(o_j)}\Vert_2^2\le(1+\epsilon)\Vert\boldsymbol{o_i}-\boldsymbol{o_j}\Vert_2^2
 $$
 
 where $0\lt\epsilon\lt 1$ and $k$ is a positive integer satisfying:
@@ -27,7 +27,7 @@ $$
 k\gt\frac{24}{3\epsilon^2-2\epsilon^3}\log{n}
 $$
 
-Let $A$ be a random matrix of size $k\times d$, where each entry is independently drawn from the standard normal distribution $\mathcal{N}(0,1)$. Using this random matrix, we can construct a mapping that satisfies the JL Lemma. For any point $\boldsymbol{p}\in\mathcal{P}$, the mapping is defined as:
+Let $A$ be a random matrix of size $k\times d$, where each entry is independently drawn from the standard normal distribution $\mathcal{N}(0,1)$. Using this random matrix, we can construct a mapping that satisfies the JL Lemma. For any point $\boldsymbol{p}\in\mathbb{R}^d$, the mapping is defined as:
 
 $$
 \boldsymbol{f(p)}=\frac{A}{\sqrt{k}}\cdot\boldsymbol{p}
@@ -39,7 +39,7 @@ To prove the JL Lemma, we first establish some auxiliary lemmas and inequalities
 
 ### Lemma 1
 
-For any point $\boldsymbol{p}\in\mathcal{P}$, let $\boldsymbol{Y}=\frac{A}{\sqrt{k}}\cdot\boldsymbol{p}$. Then, we have:
+For any point $\boldsymbol{p}\in\mathbb{R}^d$, let $\boldsymbol{Y}=\frac{A}{\sqrt{k}}\cdot\boldsymbol{p}$. Then, we have:
 
 $$
 \mathrm{E}[\Vert\boldsymbol{Y}\Vert^2]=\Vert\boldsymbol{p}\Vert^2
@@ -119,7 +119,7 @@ $$
 
 ### Lemma 3
 
-For any point $\boldsymbol{p}\in\mathcal{P}$, let $\boldsymbol{Y}=\frac{A}{\sqrt{k}}\cdot\boldsymbol{p}$. The following inequalities hold:
+For any point $\boldsymbol{p}\in\mathbb{R}^{d}$, let $\boldsymbol{Y}=\frac{A}{\sqrt{k}}\cdot\boldsymbol{p}$. The following inequalities hold:
 
 $$
 \begin{align*}
@@ -250,3 +250,35 @@ Therefore:
 $$
 \Pr\left[\sum_{i=1}^{k}X_{i}^{2}\le k(1-\epsilon)\right]\le\frac{1}{n^2}
 $$
+
+### Proof of the JL Lemma
+
+Given any point $\boldsymbol{p}\in\mathbb{R}^d$, we will use Lemma 3 and Boole's inequality to show that the JL Lemma holds.
+
+From Lemma 3, for any point $\boldsymbol{p}\in\mathbb{R}^{d}$, the following holds:
+
+$$
+\Pr\left[\Vert\boldsymbol{f(p)}\Vert^2\notin\left[(1-\epsilon)\Vert\boldsymbol{p}\Vert^{2},(1+\epsilon)\Vert\boldsymbol{p}\Vert^{2}\right]\right]\le\frac{2}{n^2}
+$$
+
+Since this probability holds for any point $\boldsymbol{p}\in\mathbb{R}^d$, it also holds for any pair of points $\boldsymbol{u}=\boldsymbol{o_i}-\boldsymbol{o_j}$, where $\boldsymbol{o_i},\boldsymbol{o_j}\in\mathcal{O}$.
+
+Furthermore, using the linearity of the projection, we have:
+
+$$
+\boldsymbol{f(o_1-o_2)}=\boldsymbol{f(o_1)}-\boldsymbol{f(o_2)}
+$$
+
+Therefore, applying Lemma 3 to the difference between two points $\boldsymbol{o_i}$ and $\boldsymbol{o_j}$, we obtain:
+
+$$
+\Pr\left[\Vert\boldsymbol{f(o_i)}-\boldsymbol{f(o_j)}\Vert^2\notin\left[(1-\epsilon)\Vert\boldsymbol{o_i}-\boldsymbol{o_j}\Vert^{2},(1+\epsilon)\Vert\boldsymbol{o_i}-\boldsymbol{o_j}\Vert^{2}\right]\right]\le\frac{2}{n^2}
+$$
+
+The number of pairs of points $\boldsymbol{o_i},\boldsymbol{o_j}\in\mathcal{O}$ is $\binom{n}{2}$. Thus, using Boole's inequality, the probability that at least one pair of points falls outside the desired error bound is at most:
+
+$$
+\frac{n(n-1)}{2}\frac{2}{n^2}=1-\frac{1}{n}
+$$
+
+Thus, with probability at least $\frac{1}{n}\gt 0$, all pairs of points in $\mathcal{O}$ will fall within the desired error bounds, completing the proof of the JL Lemma.
