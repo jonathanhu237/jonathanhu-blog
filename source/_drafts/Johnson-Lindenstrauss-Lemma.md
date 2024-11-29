@@ -86,3 +86,167 @@ $$
 $$
 
 #### Proof of Lemma 2
+
+The PDF of the standard normal distribution is:
+
+$$
+f(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}
+$$
+
+We now compute $\text{E}\left[e^{\lambda x^2}\right]$:
+
+$$
+\text{E}\left[e^{\lambda x^2}\right]=\int_{-\infty}^{+\infty}\frac{1}{\sqrt{2\pi}}e^{\lambda x^2}e^{-\frac{x^2}{2}}\mathrm{d}x=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}e^{-(1-2\lambda)\frac{x^2}{2}}\mathrm{d}x
+$$
+
+Next, let $y=x\sqrt{1-2\lambda}$, so that $\mathrm{d}y=\sqrt{1-2\lambda}\mathrm{d}x$. Substituting this into the integral, we get:
+
+$$
+\text{E}\left[e^{\lambda x^2}\right]=\frac{1}{\sqrt{1-2\lambda}}\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}e^{-\frac{y^2}{2}}\mathrm{d}y
+$$
+
+Using the well-known result for the standard normal distribution:
+
+$$
+\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}e^{-\frac{y^2}{2}}\mathrm{d}y=1
+$$
+
+Therefore:
+
+$$
+\text{E}\left[e^{\lambda x^2}\right]=\frac{1}{\sqrt{1-2\lambda}}
+$$
+
+### Lemma 3
+
+For any point $\boldsymbol{p}\in\mathcal{P}$, let $\boldsymbol{Y}=\frac{A}{\sqrt{k}}\cdot\boldsymbol{p}$. The following inequalities hold:
+
+$$
+\begin{align*}
+    \Pr\left[\Vert\boldsymbol{Y}\Vert^2\ge(1+\epsilon)\Vert\boldsymbol{p}\Vert^2\right]&\le\frac{1}{n^2}\\
+    \Pr\left[\Vert\boldsymbol{Y}\Vert^2\le(1-\epsilon)\Vert\boldsymbol{p}\Vert^2\right]&\le\frac{1}{n^2}
+\end{align*}
+$$
+
+#### Proof of Lemma 3
+
+We begin by simplifying the inequalities. From the definition of $\boldsymbol{Y}$, we have:
+
+$$
+Y_i=\frac{1}{\sqrt{k}}\sum_{j=1}^{d}A_{ij}p_j
+$$
+
+We now compute $\Vert\boldsymbol{Y}\Vert^2$:
+
+$$
+\Vert\boldsymbol{Y}\Vert^2=\sum_{i=1}^{k}\left(\frac{1}{\sqrt{k}}\sum_{j=1}^{d}A_{ij}p_j\right)^2=\sum_{i=1}^{k}\frac{1}{k}\left(\sum_{j=1}^{d}A_{ij}p_j\right)^2
+$$
+
+Since the standard normal distribution is a $2$-stable distribution, using the will-known property, we have:
+
+$$
+\Vert\boldsymbol{Y}\Vert^2=\sum_{i=1}^{k}\frac{1}{k}\Vert p\Vert^2X_{i}^{2}=\frac{\Vert p\Vert^2}{k}\sum_{i=1}^{k}X_{i}^{2}
+$$
+
+where $X_i$ is a random variable distributed as the standard normal distribution. Substituting this back, the inequalities we need to prove reduce to:
+
+$$
+\begin{align*}
+    \Pr\left[\sum_{i=1}^{k}X_{i}^{2}\ge k(1+\epsilon)\right]&\le\frac{1}{n^2}\\
+    \Pr\left[\sum_{i=1}^{k}X_{i}^{2}\le k(1-\epsilon)\right]&\le\frac{1}{n^2}
+\end{align*}
+$$
+
+For the first inequality, let $\lambda>0$, then:
+
+$$
+\Pr\left[\sum_{i=1}^{k}X_{i}^{2}\ge k(1+\epsilon)\right]=\Pr\left[e^{\lambda\sum_{i=1}^{k}X_i^2}\ge e^{\lambda k(1+\epsilon)}\right]
+$$
+
+Using the Markov's inequality, we have:
+
+$$
+\Pr\left[e^{\lambda\sum_{i=1}^{k}X_i^2}\ge e^{\lambda k(1+\epsilon)}\right]\le\frac{\text{E}\left[e^{\lambda\sum_{i=1}^{k}X_i^2}\right]}{e^{\lambda k(1+\epsilon)}}=\frac{\text{E}^{k}\left[e^{\lambda X_1^2}\right]}{e^{\lambda k(1+\epsilon)}}
+$$
+
+Let $\lambda=\frac{\epsilon}{2(1+\epsilon)}\le\frac{1}{2}$. By Lemma 2, we have:
+
+$$
+\frac{\text{E}^{k}\left[e^{\lambda X_1^2}\right]}{e^{\lambda k(1+\epsilon)}}=\left(\frac{1}{\sqrt{1-2\lambda}}\right)^{k}e^{-\lambda k(1+\epsilon)}=\left[(1+\epsilon)e^{-\epsilon}\right]^{\frac{k}{2}}
+$$
+
+Using the Taylor expansion for $\ln(1+\epsilon)$:
+
+$$
+\ln(1+\epsilon)=\epsilon-\frac{\epsilon^2}{2}+\frac{\epsilon^3}{3}-\frac{\epsilon^4}{4}+\cdots
+$$
+
+We have:
+
+$$
+1+\epsilon\le e^{\epsilon-\frac{\epsilon^2}{2}+\frac{\epsilon^3}{3}}
+$$
+
+Thus:
+
+$$
+\left[(1+\epsilon)e^{-\epsilon}\right]^{\frac{k}{2}}\le \left(e^{\epsilon-\frac{\epsilon^2}{2}+\frac{\epsilon^3}{3}}e^{-\epsilon}\right)^{\frac{k}{2}}=e^{-\frac{k(3\epsilon^2-2\epsilon^3)}{12}}
+$$
+
+If $k$ satisfies:
+
+$$
+k\gt\frac{24}{3\epsilon^2-2\epsilon^3}\log{n}
+$$
+
+then:
+
+$$
+e^{-\frac{k(3\epsilon^2-2\epsilon^3)}{12}}\le e^{-2\log{n}}=\frac{1}{n^2}
+$$
+
+Therefore:
+
+$$
+\Pr\left[\sum_{i=1}^{k}X_{i}^{2}\ge k(1+\epsilon)\right]\le\frac{1}{n^2}
+$$
+
+Similarly, for the second inequality, let $\lambda>0$, then:
+
+$$
+\begin{align*}
+\Pr\left[\sum_{i=1}^{k}X_{i}^{2}\le k(1-\epsilon)\right]&=\Pr\left[e^{-\lambda\sum_{i=1}^{k}X_i^2}\ge e^{-\lambda k(1-\epsilon)}\right] \\
+&\le\frac{\text{E}\left[e^{-\lambda\sum_{i=1}^{k}X_i^2}\right]}{e^{-\lambda k(1-\epsilon)}} \\
+&=\frac{\text{E}^{k}\left[e^{-\lambda X_1^2}\right]}{e^{-\lambda k(1-\epsilon)}}
+\end{align*}
+$$
+
+Let $\lambda=\frac{\epsilon}{2(1-\epsilon)}$, so that $-\lambda=\frac{\epsilon}{2(\epsilon-1)}\lt 0\lt \frac{1}{2}$. We have:
+
+$$
+\frac{\text{E}^{k}\left[e^{-\lambda X_1^2}\right]}{e^{-\lambda k(1-\epsilon)}}=\left(\frac{1}{\sqrt{1+2\lambda}}\right)^ke^{\lambda k(1-\epsilon)}=\left[(1-\epsilon)e^{\epsilon}\right]^{\frac{k}{2}}
+$$
+
+Similarly, using the Taylor expansion for $\ln(1-\epsilon)$:
+
+$$
+\ln(1-\epsilon)=-\epsilon-\frac{\epsilon^2}{2}-\frac{\epsilon^3}{3}\cdots
+$$
+
+we have:
+
+$$
+1-\epsilon\le e^{-\epsilon-\frac{\epsilon^2}{2}}
+$$
+
+Thus:
+
+$$
+\left[(1-\epsilon)e^{\epsilon}\right]^{\frac{k}{2}}\le e^{-\frac{k\epsilon^2}{4}}\lt e^{-\frac{6\epsilon^2}{3\epsilon^2-2\epsilon^3}\log{n}}\lt e^{-2\log{n}}=\frac{1}{n^2}
+$$
+
+Therefore:
+
+$$
+\Pr\left[\sum_{i=1}^{k}X_{i}^{2}\le k(1-\epsilon)\right]\le\frac{1}{n^2}
+$$
