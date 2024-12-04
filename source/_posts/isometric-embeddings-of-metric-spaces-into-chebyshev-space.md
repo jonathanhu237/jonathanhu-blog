@@ -1,9 +1,8 @@
 ---
 title: Isometric Embeddings of Metric Spaces into Chebyshev Space
 categories:
-  - Math
-tags:
   - Embedding
+tags:
   - Norm
 date: 2024-11-24 21:18:06
 ---

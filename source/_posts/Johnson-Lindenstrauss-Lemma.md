@@ -1,9 +1,8 @@
 ---
 title: Johnson Lindenstrauss Lemma
 categories:
-  - Math
-tags:
   - Embedding
+tags:
   - Norm
 date: 2024-11-29 17:34:11
 ---

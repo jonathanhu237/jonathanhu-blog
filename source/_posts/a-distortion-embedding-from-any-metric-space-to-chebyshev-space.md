@@ -1,9 +1,8 @@
 ---
 title: A Distortion Embedding From Any Metric Space to Chebyshev Space
 categories:
-  - Math
-tags:
   - Embedding
+tags:
   - Norm
 date: 2024-11-28 14:36:52
 ---

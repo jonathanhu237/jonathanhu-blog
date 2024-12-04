@@ -2,9 +2,8 @@
 title: Stable Distributions for LSH
 date: "2024-11-23 01:39:00+08:00"
 categories:
-    - Computer Science
+    - Locality-Sensitive Hashing
 tags:
-    - LSH
     - ANNS
     - Norm
     - Stable Distribution
